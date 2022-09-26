@@ -1,9 +1,14 @@
-body{
-  background: #141414;
-  color: #ffffff;
+body {
+	background: #141414;
+	color: #ffffff;
 }
 
-.movie-app > .row{
-  overflow-x: auto;
-  flex-wrap: nowrap;
+.movie-app > .row {
+	overflow-x: auto;
+  flex-wrap: nowrap; 
+}
+
+.form-control{
+  display: flex;
+  margin-right: 400px;
 }
