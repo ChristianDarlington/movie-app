@@ -11,21 +11,22 @@ function App() {
 
   const [search, setSearch] = useState('')
 
-  const getMovieRequest = async () => {
-    const url = 'http://www.omdbapi.com/?s=avengers&apikey=be8a4a3f'
+  const getMovieRequest = async (search) => {
+    const url = `http://www.omdbapi.com/?s=${search}&apikey=be8a4a3f`
 
     const response = await fetch(url)
     const responseJson = await response.json()
 
-    console.log(responseJson)
-
-    setMovies(responseJson.Search)
+   
+    if(responseJson.Search){
+      setMovies(responseJson.Search)
+    }
 
   }
 
 useEffect(() => {
-  getMovieRequest()
-},[])
+  getMovieRequest(search)
+},[search])
 
 
 
